@@ -6,22 +6,22 @@ const Status = () => {
   return <div>{error && <div>{error}</div>}</div>;
 };
 
-const Extra = () => {
+const Extra = (props) => {
   const dispatch = useDispatch();
 
   const onClickLogin = () => {
     console.log("On click login");
     dispatch({
-      type: "USER_FETCH_SUCCEEDED",
-      payload: { name: "Huy" },
+      type: "USER_FETCH_REQUESTED",
+      payload: { id: 0 },
     });
   };
 
   const onClickLoginFailed = () => {
     console.log("On click login failed");
     dispatch({
-      type: "USER_FETCH_FAILED",
-      payload: "Error fetch user",
+      type: "USER_FETCH_REQUESTED",
+      payload: { id: 1 },
     });
   };
 
